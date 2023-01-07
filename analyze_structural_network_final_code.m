@@ -19,6 +19,9 @@
 % This code solves a sparsity promoting optimal control problem for 
 % structural brain networks
 
+% This code is written by: Ilias Mitrai
+% For any questions please contact: Prodromos Daoutidis <daout001@umn.edu>
+
 %% analyze all brains
 % load the data
 load('NCTfMRI30SubScale60_ROI_volcorrected.mat')

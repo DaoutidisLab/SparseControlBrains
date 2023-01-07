@@ -8,3 +8,11 @@ The repository has three Matlab files:
 
  - analyze_structural_network_final_code.m: This file solves the Sparsity promoting optimal controller Synthesis problem for the structurak brain networks
 
+
+This code requires the following data and packages:
+
+Data: 
+- [Structural brain networks](https://complexsystemsupenn.com/s/NCTfMRI30SubScale60_ROI_volcorrected.mat) 
+
+Software:
+- [LQRSP – Sparsity-Promoting Linear Quadratic Regulator](http://www.ece.umn.edu/users/mihailo/software/lqrsp/)

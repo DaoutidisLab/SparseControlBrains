@@ -54,4 +54,3 @@ for i=1:30
 end
 ylabel('Nonzero entries','interpreter','latex')
 xlabel('Feedback cost $p$','interpreter','latex')
-

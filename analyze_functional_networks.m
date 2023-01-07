@@ -25,7 +25,7 @@
 %% analyze all brains
 % number of nodes in the network
 % first import the data 
-function []=K_gen_node_level(A)
+function [data]=K_gen_node_level(A)
     % The input is the adjacency matrix
     % The output is a struct file with the results
     n,n = size(A);

@@ -28,12 +28,6 @@ all_data = {} % store results for all runs
 parfor kk=1:30 % loop over all brains -- if parfor is not avaialbe use for
     disp(kk)
     A = squeeze(X_ROI_volscaled(kk,:,:));
-%     A=zeros(n);
-%     for i=1:n
-%         for j=1:n
-%             A(i,j) = A_all(1,i,j);
-%         end
-%     end
     % normalize A
     A = (A- diag(diag(A)))/(max(eig(A))+1) - eye(n);
     % options for LQRSP
@@ -45,12 +39,3 @@ parfor kk=1:30 % loop over all brains -- if parfor is not avaialbe use for
     % store the results
     all_data(kk) = solpath;
 end
-%%
-%% plot stuff
-figure();
-hold all
-for i=1:30
-    semilogy(all_data(1).gam, all_data(i).nnz,'o')
-end
-ylabel('Nonzero entries','interpreter','latex')
-xlabel('Feedback cost $p$','interpreter','latex')

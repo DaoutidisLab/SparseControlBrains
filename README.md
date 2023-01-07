@@ -7,6 +7,7 @@ Mitrai, I., Jones, V., Dewantoro, H., Stamoulis, C., Daoutidis P., Internal cont
 The repository has three Matlab files:
 
  - analyze_structural_network_final_code.m: This file solves the Sparsity promoting optimal controller Synthesis problem for the structurak brain networks
+ - analyze_functional_network.m: This file solves the Sparsity promoting optimal controller Synthesis problem for the functional brain networks
 
 
 This code requires the following data and packages:

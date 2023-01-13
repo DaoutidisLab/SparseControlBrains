@@ -31,5 +31,5 @@ The output of this command is "results" which is a struct data format. More more
 
 If you want to use a cluster or a high performance computer run:
 ```
-sbatch -p <partition name> --array=1-30 parallel_runs
+sbatch -p <partition name> --array=1-30 parallel_run
 ```

@@ -32,12 +32,9 @@ options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksi
 ```
 Once the options for LQRSP are defined then the following code can be used to get the results:
 ```
-results = analyze_functional_network(A, options)
+results = analyze_functional_networks(A, options)
 ```
 The output of this command is "results" which is a struct data format. More more details on the fields see the analyze_functional_network.m file.
 
-If you want to use a cluster or a high performance computer run:
-```
-sbatch -p <partition name> --array=1-30 parallel_run
-```
+If you want to use parallel computing to run analyze multiple brains simultaneously then run the `parallel_run.m` file. The output of this file is a struct which has the LQRSP results for every brain. See the `parallel_run.m` file for more details. 
 

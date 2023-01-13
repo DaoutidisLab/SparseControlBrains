@@ -26,6 +26,8 @@ To run LQRSP for one brain first you must import the adjacency matrix `A` and th
 3. `rho`: This is a penalty parameter for the solution of the LQRSP problem (Augmented Lagrangian parameter). See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for more information. Note this is different than the feedback cost parameter `gamval`.
 4. `maxiter`: Maximum number of iterations for the algorithm that is used to solve the LQRSP problem.
 5. `blksize`: This parameter is relevant only if the controller must have a specific number of blocks and is used only if the `method` is `blkcard`, `blkl1`, `blkwl1`, `blkslog`. See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information.
+
+An example is the following:
 ```
 p_val = linspace(8.5,11,11);
 options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksize',[1]);

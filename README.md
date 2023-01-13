@@ -26,6 +26,8 @@ To run LQRSP for one brain first you must import the adjacency matrix A and then
 ```
 results = analyze_functional_network(A)
 ```
+The output of this command is "results" which is a struct. More more details on the fields see the analyze_functional_network.m file.
+
 
 If you want to use a cluster or a high performance computer run:
 ```

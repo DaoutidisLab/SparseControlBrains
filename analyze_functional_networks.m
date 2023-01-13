@@ -25,7 +25,7 @@
 %% analyze all brains
 % number of nodes in the network
 % first import the data 
-function [data]=K_gen_node_level(A, options)
+function [data]=analyze_functional_networks(A, options)
     % The input is the adjacency matrix
     % The output is a struct file with the results
     
@@ -34,13 +34,7 @@ function [data]=K_gen_node_level(A, options)
     % normalize the A matrix
     A = (A-diag(diag(A)))/(max(eig(A))+1) - eye(n); 
 
-    % range of the penalty parameter 
-    %p_val=linspace(8.5,11,11);
-    
-    %options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksize',[1,1]);
-    tic
     solpath = lqrsp(A,eye(n),eye(n),eye(n),eye(n),options)   % A is the adjacency matrix
-    toc
     % store the results
     data.A = A;
     data.sol = solpath;

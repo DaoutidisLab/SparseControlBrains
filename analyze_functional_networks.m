@@ -42,12 +42,12 @@ function [data]=analyze_functional_networks(A, options)
     % the data file is a struct with fields:
     % A: the adjacency matrix of the functional network
     % sol: is a struct with fields:
-    %       F [size = n x n x len(gamval)] the optimal feedback gain matrix for different values of p
-    %       nnz [size = len(gamval)] The number of nonzero entries in the F matrix for different values of p
-    %       J [size = len(gamval)]   H2 norm for different values of p
-    %       gam [size = len(gamval)] The values of the parameter p
-    %       Fopt [size = n x n x len(gamval)] the solution of the structured problem # this is not used in the paper
-    %       Jopt [size = len(gamval)] H2 norm of the structured problrm # not used in the paprer
+    %       solpath.F [size = n x n x len(gamval)] the optimal feedback gain matrix for different values of p
+    %       solpath.nnz [size = len(gamval)] The number of nonzero entries in the F matrix for different values of p
+    %       solpath.J [size = len(gamval)]   H2 norm for different values of p
+    %       solpath.gam [size = len(gamval)] The values of the parameter p
+    %       solpath.Fopt [size = n x n x len(gamval)] the solution of the structured problem # this is not used in the paper
+    %       Jsolpath.opt [size = len(gamval)] H2 norm of the structured problrm # not used in the paprer
   
 end
 

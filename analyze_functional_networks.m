@@ -22,9 +22,6 @@
 % This code is written by: Harman Dewantoro <dewan055@umn.edu>
 % For any questions please contact: Prodromos Daoutidis <daout001@umn.edu>
 
-%% analyze all brains
-% number of nodes in the network
-% first import the data 
 function [data]=analyze_functional_networks(A, options)
     % The input is the adjacency matrix
     % The output is a struct file with the results

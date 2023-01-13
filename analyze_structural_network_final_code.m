@@ -27,15 +27,20 @@ load('NCTfMRI30SubScale60_ROI_volcorrected.mat')
 n=129; % number of nodes in the networks
 all_data = {} % store results for all runs
 
+% set the parameters for the LQRSP problem
+
+gam_val = logspace(-6,0,5) % values of the penalty cost
+
+options = struct('method','card','gamval',gam_val,'rho',100,'maxiter',1000,'blksize',[1]);
+
+
 parfor kk=1:30 % loop over all brains -- if parfor is not available use for
     disp(kk)
     % get the A matrix 
     A = squeeze(X_ROI_volscaled(kk,:,:));
     % normalize A
     A = (A- diag(diag(A)))/(max(eig(A))+1) - eye(n);
-    % options for LQRSP
-    gam_val = logspace(-6,0,5) % values of the penalty cost
-    options = struct('method','card','gamval',gam_val,'rho',100,'maxiter',1000,'blksize',[1]);
+
     % solve the LQRSP problem
     solpath = lqrsp(A,eye(n),eye(n),eye(n),eye(n),options);
     % store the results

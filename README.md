@@ -28,7 +28,7 @@ To run LQRSP for one brain first you must import the adjacency matrix `A` and th
 5. `blksize`: This parameter is relevant only if the controller must have a specific number of blocks and is used only if the `method` is `blkcard`, `blkl1`, `blkwl1`, `blkslog`. See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information.
 ```
 p_val = linspace(8.5,11,11);
-options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksize',[1,1]);
+options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksize',[1]);
 ```
 Once the options for LQRSP are defined then the following code can be used to get the results:
 ```

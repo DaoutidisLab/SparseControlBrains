@@ -12,24 +12,32 @@ The repository has two Matlab files:
 
 This code requires the following data and packages:
 
-Data: 
-- [Structural brain networks](https://complexsystemsupenn.com/s/NCTfMRI30SubScale60_ROI_volcorrected.mat) 
+Data: [Structural brain networks](https://complexsystemsupenn.com/s/NCTfMRI30SubScale60_ROI_volcorrected.mat) 
 
-Software:
-- [LQRSP – Sparsity-Promoting Linear Quadratic Regulator](http://www.ece.umn.edu/users/mihailo/software/lqrsp/)
+Software: [LQRSP – Sparsity-Promoting Linear Quadratic Regulator](http://www.ece.umn.edu/users/mihailo/software/lqrsp/)
 
-# Structural network
+## Structural network
 If you wnat to run LQRSP for the structural brains run the file: analyze_structural_network_final_code
 
-# Functional network
-To run LQRSP for one brain first you must import the adjacency matrix A and then run
+## Functional network
+To run LQRSP for one brain first you must import the adjacency matrix A and then define the options for the sparse controller synthesis problem. The options are: (see [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information)
+1. `method`: This determines the penalty function in the LQRSP. We use the 'card'. See the [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) website for other options.
+2. `gamval`: Values of the penalty parameters (i.e. feedback cost) for which the control problem should be solved.
+3. `rho`: This is a penalty parameter for the solution of the LQRSP problem (Augmented Lagrangian parameter). See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for more information. Note this is different than the feedback cost parameter `gamval`).
+4. `maxiter`: Maximum number of iterations for the algorithm that is used to solve the LQRSP problem.
+5. `blksize`: This parameter is relevant only if the controller must have a specific number of blocks and is used only if the `method` is `blkcard`, `blkl1`, `blkwl1`, `blkslog`. See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information.
 ```
-results = analyze_functional_network(A)
+p_val = linspace(8.5,11,11);
+options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksize',[1,1]);
+```
+Once the options for LQRSP are defined then the following code can be used to get the results:
+```
+results = analyze_functional_network(A, options)
 ```
 The output of this command is "results" which is a struct data format. More more details on the fields see the analyze_functional_network.m file.
-
 
 If you want to use a cluster or a high performance computer run:
 ```
 sbatch -p <partition name> --array=1-30 parallel_run
 ```
+

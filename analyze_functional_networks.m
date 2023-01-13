@@ -33,8 +33,7 @@ function [data]=analyze_functional_networks(A, options)
     % solve the LQRSP problem
     solpath = lqrsp(A,eye(n),eye(n),eye(n),eye(n),options)   % A is the adjacency matrix
     % store the results
-    data.A = A;
-    data.sol = solpath;
+    data = solpath;
     
     % the data file is a struct with fields:
     % A: the adjacency matrix of the functional network

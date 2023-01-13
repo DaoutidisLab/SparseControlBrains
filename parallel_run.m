@@ -6,8 +6,7 @@ brain_data = import data; % Note this should change in order to execute the code
 results = {};
 
 % define options for LQRSP
-% if the options change for different brains then
-% add lines 11,13 inside the parfor loop
+% if the options change for different brains then add lines 10,12 inside the parfor loop
 p_val = linspace(8.5,11,11); % feedback cost
 % options for the LQRSP 
 options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksize',[1,1]);
@@ -15,13 +14,12 @@ options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksi
 % Number of brains that is analyzed is N_brains
 
 % Note: The code below is a pseudocode it will raise errors
-% substitute line 21
+% You must substitute line 21
 
 parfor i=1:N_brains
     A = get A matrix for index i;
     % the normalization is done in the analyze_functional_networks file
-    % if the A is normalized then comment line 32 in the
-    % `analyze_functional_networks.m` file
+    % if the A is normalized then comment line 32 in the `analyze_functional_networks.m` file
     
     % solve the LQRSP problem
     [data]=analyze_functional_networks(A, options)

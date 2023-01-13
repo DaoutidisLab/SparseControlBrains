@@ -33,7 +33,7 @@ function [data]=analyze_functional_networks(A, options)
 
     % normalize the A matrix
     A = (A-diag(diag(A)))/(max(eig(A))+1) - eye(n); 
-
+    % solve the LQRSP problem
     solpath = lqrsp(A,eye(n),eye(n),eye(n),eye(n),options)   % A is the adjacency matrix
     % store the results
     data.A = A;

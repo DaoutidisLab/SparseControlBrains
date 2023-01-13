@@ -22,7 +22,6 @@
 % This code is written by: Ilias Mitrai <mitra047@umn.edu>
 % For any questions please contact: Prodromos Daoutidis <daout001@umn.edu>
 
-%% analyze all brains
 % load the data
 load('NCTfMRI30SubScale60_ROI_volcorrected.mat')
 n=129; % number of nodes in the networks

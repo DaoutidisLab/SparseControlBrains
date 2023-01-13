@@ -23,7 +23,7 @@ If you wnat to run LQRSP for the structural brains run the file: analyze_structu
 To run LQRSP for one brain first you must import the adjacency matrix `A` and then define the options for the sparse controller synthesis problem. The options are: (see [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information)
 1. `method`: This determines the penalty function in the LQRSP. We use the 'card'. See the [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) website for other options.
 2. `gamval`: Values of the penalty parameters (i.e. feedback cost) for which the control problem should be solved.
-3. `rho`: This is a penalty parameter for the solution of the LQRSP problem (Augmented Lagrangian parameter). See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for more information. Note this is different than the feedback cost parameter `gamval`).
+3. `rho`: This is a penalty parameter for the solution of the LQRSP problem (Augmented Lagrangian parameter). See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for more information. Note this is different than the feedback cost parameter `gamval`.
 4. `maxiter`: Maximum number of iterations for the algorithm that is used to solve the LQRSP problem.
 5. `blksize`: This parameter is relevant only if the controller must have a specific number of blocks and is used only if the `method` is `blkcard`, `blkl1`, `blkwl1`, `blkslog`. See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information.
 ```

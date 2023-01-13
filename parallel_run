@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#SBATCH --time=24:00:00
+#SBATCH --ntasks=1
+#SBATCH --mem=50g
+#SBATCH --tmp=60g
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user= <your_email>
+cd ~<the desired directory>
+module load matlab/R2021a
+srun matlab -nodisplay -nodesktop -nospalsh -r "analyze_functional_networks(${SLURM_ARRAY_TASK_ID})"

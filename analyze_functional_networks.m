@@ -47,7 +47,7 @@ function [data]=analyze_functional_networks(A, options)
     %       solpath.J [size = len(gamval)]   H2 norm for different values of p
     %       solpath.gam [size = len(gamval)] The values of the parameter p
     %       solpath.Fopt [size = n x n x len(gamval)] the solution of the structured problem # this is not used in the paper
-    %       Jsolpath.opt [size = len(gamval)] H2 norm of the structured problrm # not used in the paprer
+    %       solpath.Jopt [size = len(gamval)] H2 norm of the structured problrm # not used in the paprer
   
 end
 

@@ -8,7 +8,7 @@
 % 
 % @article{mitrai2020internal,
 %   title={Internal Control of Brain Networks via Sparse Feedback},
-%   author={Mitria, Ilias and Jones, Victoria and  Dewantoro, Harman and Stamoulis, Caterina and Daoutidis, Prodromos},
+%   author={Mitrai, Ilias and Jones, Victoria and  Dewantoro, Harman and Stamoulis, Caterina and Daoutidis, Prodromos},
 %   journal={under review},
 %   volume={},
 %   pages={},

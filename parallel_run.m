@@ -58,7 +58,7 @@ parfor i=1:N_brains
     results{i} = data;
 end
 
-% The outout of the file is the results which is a nested struct data type.
+% The output of the file is the result of the LQRSP problem which is a nested struct data type.
 % the first field is the brain index
 % results(i) has the results for brain with index i
 % results(i) is a struct with fields:

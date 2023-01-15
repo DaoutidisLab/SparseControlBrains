@@ -17,7 +17,7 @@ Data: [Structural brain networks](https://complexsystemsupenn.com/s/NCTfMRI30Sub
 Software: [LQRSP – Sparsity-Promoting Linear Quadratic Regulator](http://www.ece.umn.edu/users/mihailo/software/lqrsp/)
 
 ## Structural network
-If you wnat to run LQRSP for the structural brains run the file: analyze_structural_network_final_code
+If you want to run LQRSP for the structural brains run the file: analyze_structural_network_final_code
 
 ## Functional network
 To run LQRSP for one brain first you must import the adjacency matrix `A` and then define the options for the sparse controller synthesis problem. The options are: (see [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information)

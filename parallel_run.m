@@ -1,7 +1,29 @@
+% Hello there!
+% This code was used in this publication:
+% 
+%  Mitrai, I., Jones, V., Dewantoro, H., Stamoulis, C., Daoutidis P., Internal 
+%  control of brain networks via Sparse feedback, submitted to AIChE Journal
+%  
+% If you use this code please cite:
+% 
+% @article{mitrai2020internal,
+%   title={Internal Control of Brain Networks via Sparse Feedback},
+%   author={Mitrai, Ilias and Jones, Victoria and  Dewantoro, Harman and Stamoulis, Catherine and Daoutidis, Prodromos},
+%   journal={under review},
+%   volume={},
+%   pages={},
+%   year={2023},
+%   publisher={}
+% }
+
+% This code is used to solve the controller synthesis problem for multiple brains in parallel.
+
+% This code is written by: Ilias Mitrai <mitra047@umn.edu>
+% For any questions please contact: Prodromos Daoutidis <daout001@umn.edu>
 
 
 % import data
-brain_data = import data; % Note this should change in order to execute the code
+brain_data = import data; % Note this should change before executing the code
 % struct to store the results for all the brains
 results = {};
 
@@ -14,7 +36,7 @@ options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksi
 % Number of brains that is analyzed is N_brains
 
 % Note: The code below is a pseudocode it will raise errors
-% You must substitute line 21
+% You must substitute line 26
 
 parfor i=1:N_brains
     A = get A matrix for index i;

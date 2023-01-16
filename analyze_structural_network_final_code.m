@@ -29,8 +29,12 @@ all_data = {} % store results for all runs
 
 % set the parameters for the LQRSP problem
 
-gam_val = logspace(-6,0,5) % values of the penalty cost
+p_low = -6; # lower values of the penalty parameter Note: the discretization is in logspace
+p_high = 0; # Upper values of the penalty parameter Note: the discretization is in logspace
+Npts = 5;   # Number of discretization points of the penalty parameter
 
+gam_val = logspace(p_low, p_high,Npts) % values of the penalty cost
+# Options for LQRSP
 options = struct('method','card','gamval',gam_val,'rho',100,'maxiter',1000,'blksize',[1]);
 
 

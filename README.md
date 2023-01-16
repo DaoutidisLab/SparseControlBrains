@@ -6,21 +6,22 @@ Mitrai, I., Jones, V., Dewantoro, H., Stamoulis, C., Daoutidis P., Internal cont
 
 The repository has two Matlab files:
 
- - `analyze_structural_network_final_code.m`: This file solves the Sparsity promoting optimal controller Synthesis problem for the structural brain networks
- - `analyze_functional_network.m`: This file solves the Sparsity promoting optimal controller Synthesis problem for the functional brain networks
- - `parallel_run.m`: This file solves the Sparsity promoting optimal controller synthesis problem in parallel for multiple functional brain networks
+ - `analyze_structural_network_final_code.m`: This file solves the sparsity promoting optimal controller synthesis problem for the structural brain networks
+ - `analyze_functional_network.m`: This file solves the sparsity promoting optimal controller synthesis problem for the functional brain networks
+ - `parallel_run.m`: This file solves the sparsity promoting optimal controller synthesis problem in parallel for multiple functional brain networks
 
 
 This code requires the following data and packages:
 
 Data: [Structural brain networks](https://complexsystemsupenn.com/s/NCTfMRI30SubScale60_ROI_volcorrected.mat) 
+
 Software: [LQRSP – Sparsity-Promoting Linear Quadratic Regulator](http://www.ece.umn.edu/users/mihailo/software/lqrsp/)
 
 ## Structural network
-If you want to run LQRSP for the structural brains run the file: `analyze_structural_network_final_code.m`
+If you want to run LQRSP for the structural brain networks run the file: `analyze_structural_network_final_code.m`
 
 ## Functional network
-To run LQRSP for one functional brain first you must import the adjacency matrix `A` and then define the options for the sparse controller synthesis problem. The options are: (see [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information)
+To run LQRSP for one functional brain network first you must import the adjacency matrix `A` and then define the options for the sparse controller synthesis problem. The options are: (see [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for detailed information)
 1. `method`: This determines the penalty function in the LQRSP. We use the 'card', i.e., number of nonzero entries in the feedback gain matrix K. See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) website for other options.
 2. `gamval`: Values of the penalty parameters (i.e. feedback cost) for which the control problem should be solved.
 3. `rho`: This is a penalty parameter for the solution of the LQRSP problem (Augmented Lagrangian parameter). See [LQRSP](http://www.ece.umn.edu/users/mihailo/software/lqrsp/) for more information. Note this is different than the feedback cost parameter `gamval`.
@@ -29,7 +30,14 @@ To run LQRSP for one functional brain first you must import the adjacency matrix
 
 An example is the following:
 ```
-p_val = linspace(8.5,11,11);
+p_low = 8.5; # lower value of penalty parameter
+p_up = 11; # upper value of the penalty parameter
+Npts = 11: # Number of discretization points for the penalty parameter
+# define the discretization of the pealty parameter 
+p_val = linspace(8.5,11,11); 
+# Note you can also use linspace or you can define your own set of parameter such as p_val = [1,2,3];
+
+# Define the options for LQRSP
 options = struct('method','card','gamval',p_val ,'rho',100,'maxiter',1000,'blksize',[1]);
 ```
 Once the options for LQRSP are defined then the following code can be used to get the results:

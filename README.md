@@ -4,11 +4,12 @@ This repository has the necessary code to generate the results in the following 
 
 Mitrai, I., Jones, V., Dewantoro, H., Stamoulis, C., Daoutidis P., Internal control of brain networks via Sparse feedback
 
-The repository has two Matlab files:
+The repository has the following files:
 
  - `analyze_structural_network_final_code.m`: This file solves the sparsity promoting optimal controller synthesis problem for the structural brain networks
  - `analyze_functional_network.m`: This file solves the sparsity promoting optimal controller synthesis problem for the functional brain networks
  - `parallel_run.m`: This file solves the sparsity promoting optimal controller synthesis problem in parallel for multiple functional brain networks
+ - `list_connectomes`: List of the functional brain networks (connectomes) analyzed
 
 
 This code requires the following data and packages:
